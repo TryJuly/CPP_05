@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrate.hpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:43:06 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/15 14:26:32 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/17 13:46:42 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRATE_HPP
-# define BUREAUCRATE_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <string>
-# include <ostream>
+# include <iostream>
+# include <exception>
 
-class Bureaucrate
+class Bureaucrat
 {
 	public:
-		Bureaucrate();
-		Bureaucrate(std::string& name, unsigned int grade);
-		Bureaucrate(Bureaucrate const &copy);
-		~Bureaucrate();
-		
-		Bureaucrate&	operator=(Bureaucrate const &copy);
+		Bureaucrat();
+		Bureaucrat(std::string& name, unsigned int grade);
+		Bureaucrat(Bureaucrat const &copy);
+		~Bureaucrat();
+
+		Bureaucrat&	operator=(Bureaucrat const &copy);
+		void	increment( void );
+		void	decrement( void );
+		friend std::ostream	&operator<<(std::ostream &out, Bureaucrat const &c);
+
 		std::string const	getName() const;
 		unsigned int const	getGrade() const;
-		friend std::ostream	&operator<<(std::ostream &out, Bureaucrate const &c);
+
+		class	GradeTooHighException: public std::exception{
+			public:
+				const char	*what() const throw();
+		};
+		class	GradeTooLowException: public std::exception{
+			public:
+				const char	*what() const throw();
+		};
 
 	private:
 		std::string const	_name;
 		unsigned int	_grade;
+		
 };
 
 #endif
