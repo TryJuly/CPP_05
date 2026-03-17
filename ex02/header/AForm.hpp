@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 09:56:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/17 14:06:25 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/17 14:18:15 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,26 @@
 # include <string>
 # include <iostream>
 
-// class Bureaucrat;
+class Bureaucrat;
 
 class AForm
 {
 	public:
-		Form();
-		Form(Form const &copy);
-		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
-		Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned);
-		virtual ~Form();
+		AForm();
+		AForm(AForm const &copy);
+		AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
+		AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned);
+		virtual ~AForm();
 
-		Form&	operator=(Form const &copy);
+		virtual AForm&	operator=(AForm const &copy) = 0;
 		virtual void	beSigned(Bureaucrat const &bureaucrat) = 0;
-		
 
 		virtual std::string const	&getName( void ) const = 0;
 		virtual bool const			&getSigned( void ) const = 0;
 		virtual unsigned const int	&getGradeToSignIt( void ) const = 0;
 		virtual unsigned const int	&getGradeToExecuteIt( void ) const = 0;
 
-	private:
+	protected:
 		std::string const	_name;
 		bool				_signed;
 		unsigned const int	_gradeToSignIt;
@@ -44,6 +43,6 @@ class AForm
 
 };
 
-std::ostream	&operator<<(std::ostream &out, Form const &copy);
+// std::ostream	&operator<<(std::ostream &out, AForm const &copy);
 
 #endif
