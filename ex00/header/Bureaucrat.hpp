@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:43:06 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/17 13:46:42 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/18 09:41:01 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Bureaucrat
 		void	decrement( void );
 		friend std::ostream	&operator<<(std::ostream &out, Bureaucrat const &c);
 
-		std::string const	getName() const;
-		unsigned int const	getGrade() const;
+		std::string const	&getName() const;
+		unsigned int const	&getGrade() const;
 
 		class	GradeTooHighException: public std::exception{
 			public:

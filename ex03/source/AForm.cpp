@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 10:02:51 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/18 12:20:10 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/18 14:35:54 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ unsigned const int	&AForm::getGradeToExecuteIt( void ) const { return (this->_gr
 AForm::AForm(AForm const &copy):
 _name(copy._name), _signed(copy._signed), _gradeToSignIt(copy._gradeToSignIt), _gradeToExecuteIt(copy._gradeToExecuteIt)
 { return ; }
-
-// AForm::AForm(AForm const &copy)
-// {
-// 	this->_signed = copy._signed;
-// 	return ;
-// }
 
 AForm::AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute):
 _name(name), _signed(false), _gradeToSignIt(gradeToSign), _gradeToExecuteIt(gradeToExecute)

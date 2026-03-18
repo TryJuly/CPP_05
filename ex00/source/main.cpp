@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:28:21 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/17 09:48:31 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/18 10:02:01 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int	main(void)
 		std::cout << e.what();
 		return (1);
 	}
+
 	return (0);
 }
