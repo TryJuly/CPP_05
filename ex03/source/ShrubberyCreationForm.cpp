@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 09:02:28 by strieste          #+#    #+#             */
-/*   Updated: 2026/04/01 10:11:55 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 15:00:35 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	else if (executor.getGrade() > this->getGradeToExecuteIt())
 		throw (Bureaucrat::GradeTooLowException());
 	std::ofstream	fd((this->_target + "_shrubbery").c_str());
-	if (!fd.is_open())
-	{
+	if (!fd.is_open()) {
 		std::cerr << "Error creating file." << std::endl;
 		return ;
 	}

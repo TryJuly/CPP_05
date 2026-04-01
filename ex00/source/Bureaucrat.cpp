@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:49:58 by strieste          #+#    #+#             */
-/*   Updated: 2026/04/01 09:34:19 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 12:55:54 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const &copy)
 
 std::ostream	&operator<<(std::ostream &out, Bureaucrat const &c)
 {
-	out << c.getName() << ", bureaucrate grade " << c.getGrade() << "." << std::endl;
+	out << c.getName() << ", bureaucrat grade " << c.getGrade() << "." << std::endl;
 	return (out);
 }

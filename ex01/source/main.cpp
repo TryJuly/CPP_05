@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:28:21 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 07:03:35 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 11:31:35 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ int	main(void)
 	std::cout << facture;
 	std::cout << "Grade Boss: " << boss.getGrade() << std::endl;
 	boss.signForm(facture);
+
 	std::cout << std::endl;
 	std::cout << facture1;
 	std::cout << "Grade Boss: " << boss.getGrade() << std::endl;
 	boss.signForm(facture1);
+
 	std::cout << std::endl;
 	std::cout << facture2;
 	std::cout << "Grade Boss: " << boss.getGrade() << std::endl;
 	boss.signForm(facture2);
+
 	std::cout << std::endl;
 	std::cout << facture3;
 	std::cout << "Grade Boss: " << boss.getGrade() << std::endl;
@@ -45,21 +48,21 @@ int	main(void)
 
 	std::cout << std::endl;
 	std::cout << "Try to create a bad form:" << std::endl;
-	try
-	{
+
+	try {
 		Form	badForm("Bad", 0, 50);
+		std::cout << badForm << std::endl;
 	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		std::cout << e.what();
 	}
+
 	std::cout << std::endl;
-	try
-	{
+
+	try {
 		Form	badForm("Bad", 3, 151);
 	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		std::cout << e.what();
 	}
 

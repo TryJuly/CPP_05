@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:43:06 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 07:07:19 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 13:12:42 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
 		void	incrementGrade( void );
 		void	decrementGrade( void );
 		void	signForm(AForm &form);
-		void	executeForm(AForm const &form);
+		void	executeForm(AForm const &form) const;
 
 		std::string const		&getName() const;
 		int						getGrade() const;

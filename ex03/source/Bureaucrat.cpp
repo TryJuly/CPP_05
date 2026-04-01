@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:49:58 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 14:21:04 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 14:59:52 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,39 +56,34 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const &copy)
 
 std::ostream	&operator<<(std::ostream &out, Bureaucrat const &c)
 {
-	out << c.getName() << ", bureaucrate grade " << c.getGrade() << "." << std::endl;
+	out << c.getName() << ", bureaucrat grade " << c.getGrade() << "." << std::endl;
 	return (out);
 }
 
 void	Bureaucrat::signForm(AForm &form)
 {
-	try
-	{
-		if (form.getSigned() == false)
-		{
+	try {
+		if (form.getSigned() == false) {
 			form.beSigned((*this));
 			std::cout << this->getName() << " signed " << form.getName() << std::endl;
 		}
 		else
 			std::cout << form.getName() << " has already been signed !" << std::endl;
 	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		std::cerr << this->getName() << " couldn't sign " << form.getName()
 		<< " cause " << e.what();
 	}
 	return ;
 }
 
-void	Bureaucrat::executeForm(AForm const &form)
+void	Bureaucrat::executeForm(AForm const &form) const
 {
-	try
-	{
+	try {
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
-	catch(const std::exception& e)
-	{
+	catch(const std::exception& e) {
 		std::cout << this->getName() << " couldn't execute " << form.getName()
 		<< " because " << e.what();
 	}

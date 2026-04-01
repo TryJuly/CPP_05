@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:56:10 by strieste          #+#    #+#             */
-/*   Updated: 2026/04/01 10:14:07 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 15:00:08 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,8 @@ AForm	*Intern::makeForm(std::string const nameForm, std::string const target)
 {
 	AForm*	(*_formCreate[3])(std::string target) = {&createRobotomyRequestForm, &createPresidentialPardonForm, &createShrubberyForm};
 	std::string nameCreateForm[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-	for (int i = 0; i < 3; i++)
-	{
-		if (nameCreateForm[i] == nameForm)
-		{
+	for (int i = 0; i < 3; i++) {
+		if (nameCreateForm[i] == nameForm) {
 			std::cout << "Intern creates " << nameCreateForm[i] << std::endl;
 			return (_formCreate[i](target));
 		}

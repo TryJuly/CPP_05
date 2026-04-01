@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 09:56:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/04/01 09:51:42 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 11:34:32 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ class AForm
 	protected:
 		std::string const	_name;
 		bool				_signed;
-		int					_gradeToSignIt;
-		int					_gradeToExecuteIt;
+		int const			_gradeToSignIt;
+		int const			_gradeToExecuteIt;
 
 };
 

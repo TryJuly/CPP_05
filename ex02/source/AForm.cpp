@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 10:02:51 by strieste          #+#    #+#             */
-/*   Updated: 2026/04/01 09:52:03 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 13:09:46 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,12 @@ _name(copy._name), _signed(copy._signed), _gradeToSignIt(copy._gradeToSignIt), _
 { return ; }
 
 AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute):
-_name(name), _signed(false)
+_name(name), _signed(false), _gradeToSignIt(gradeToSign), _gradeToExecuteIt(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (gradeToExecute > 150 || gradeToSign > 150)
 		throw (Bureaucrat::GradeTooLowException());
-	this->_gradeToSignIt = gradeToSign;
-	this->_gradeToExecuteIt = gradeToExecute;
 	return ; 
 }
 
@@ -66,8 +64,7 @@ void	AForm::beSigned(Bureaucrat const &bureaucrat)
 
 void	AForm::execute(Bureaucrat const &executor) const
 {
-	if (this->_signed == false)
-	{
+	if (this->_signed == false) {
 		if (executor.getGrade() > this->_gradeToExecuteIt)
 			throw (Bureaucrat::GradeTooLowException());
 	}
