@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:28:21 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/17 13:53:12 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/20 07:03:35 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	Form	facture;
 	Form	facture1(nameForm1, 51, 51);
 	Form	facture2(nameForm2, 1, 1);
-	Form	facture3(nameForm3, 51, 51, true);
+	Form	facture3(nameForm3, 124, 112);
 
 	Bureaucrat	boss(name, 51);
 
@@ -42,6 +42,26 @@ int	main(void)
 	std::cout << facture3;
 	std::cout << "Grade Boss: " << boss.getGrade() << std::endl;
 	boss.signForm(facture3);
+
+	std::cout << std::endl;
+	std::cout << "Try to create a bad form:" << std::endl;
+	try
+	{
+		Form	badForm("Bad", 0, 50);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what();
+	}
+	std::cout << std::endl;
+	try
+	{
+		Form	badForm("Bad", 3, 151);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what();
+	}
 
 	return (0);
 }

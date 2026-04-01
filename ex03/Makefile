@@ -11,7 +11,7 @@ OBJ_DIR = objets
 
 VPATH = source
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 #################################################################################################################
