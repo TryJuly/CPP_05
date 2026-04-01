@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 09:56:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 07:10:26 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 09:51:09 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Form
 		Form();
 		Form(Form const &copy);
 		Form(const std::string& name, int gradeToSign, int gradeToExecute);
-		// Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned);
 		~Form();
 
 		Form&	operator=(Form const &copy);

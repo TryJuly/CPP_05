@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:56:10 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 17:03:42 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:14:07 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ Intern&	Intern::operator=(Intern const &copy)
 static AForm	*createShrubberyForm(const std::string target)
 { return (new ShrubberyCreationForm(target)); }
 
-static AForm	*createPresidentialPardonForm(const std::string target)
+static AForm	*createPresidentialPardonForm(std::string const target)
 { return (new PresidentialPardonForm(target)); }
-static AForm	*createRobotomyRequestForm(const std::string target)
+static AForm	*createRobotomyRequestForm(std::string const target)
 { return (new RobotomyRequestForm(target)); }
 
 const char	*Intern::UnknowTypeFormException::what() const throw()
 { return ("Form type unknown by intern."); }
 
-AForm	*Intern::makeForm(const std::string nameForm, const std::string target)
+AForm	*Intern::makeForm(std::string const nameForm, std::string const target)
 {
 	AForm*	(*_formCreate[3])(std::string target) = {&createRobotomyRequestForm, &createPresidentialPardonForm, &createShrubberyForm};
 	std::string nameCreateForm[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
@@ -55,5 +55,5 @@ AForm	*Intern::makeForm(const std::string nameForm, const std::string target)
 	}
 	throw (Intern::UnknowTypeFormException());
 	std::cout << "Form: " << nameForm << " unknown by intern. " << std::endl;
-	return (nullptr);
+	return (NULL);
 }

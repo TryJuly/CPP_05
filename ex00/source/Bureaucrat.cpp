@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 14:49:58 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 06:26:43 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 09:34:19 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ Bureaucrat::~Bureaucrat() { return ; }
 Bureaucrat::Bureaucrat(): _name("JuniorIT"), _grade(150) { return ; }
 Bureaucrat::Bureaucrat(Bureaucrat const &copy): _name(copy.getName()), _grade(copy.getGrade()) { return ; }
 
-int					Bureaucrat::getGrade() const { return (this->_grade); }
-std::string const	&Bureaucrat::getName() const { return(this->_name); }
+int					Bureaucrat::getGrade() const { return (_grade); }
+std::string const	&Bureaucrat::getName() const { return(_name); }
 const char			*Bureaucrat::GradeTooLowException::what() const throw() { return "Grade too low !\n"; }
 const char			*Bureaucrat::GradeTooHighException::what() const throw() { return "Grade too High !\n"; }
 

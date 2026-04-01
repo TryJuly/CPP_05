@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 15:25:50 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 16:55:47 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:15:01 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ class Intern
 		~Intern();
 
 		Intern&	operator=(Intern const &copy);
-		AForm	*makeForm(const std::string nameForm, const std::string target);
-		
-		class	UnknowTypeFormException;
+		AForm	*makeForm(std::string const nameForm, std::string const target);
 
-	// private:
-	// 	static std::string	_formNames[3];
-	// 	static AForm*	(*_formCreate[3])(std::string target);
+		class	UnknowTypeFormException;
 
 };
 
@@ -41,9 +37,5 @@ class	Intern::UnknowTypeFormException: public std::exception{
 	public:
 		const char	*what() const throw();
 };
-
-// static AForm	*createShrubberyForm(const std::string target);
-// static AForm	*createPresidentialPardonForm(const std::string target);
-// static AForm	*createRobotomyRequestForm(const std::string target);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 07:57:31 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 13:47:06 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:07:13 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,7 @@ class PresidentialPardonForm: public AForm
 		virtual ~PresidentialPardonForm();
 
 		PresidentialPardonForm&	operator=(PresidentialPardonForm const &copy);
-		// virtual void	beSigned(Bureaucrat const &bureaucrat);
 		virtual void	execute(Bureaucrat const &executor) const;
-
-		// virtual std::string const	&getName( void ) const;
-		// virtual bool				getSigned( void ) const;
-		// virtual int					getGradeToSignIt( void ) const;
-		// virtual int					getGradeToExecuteIt( void ) const;
 
 	private:
 		std::string	_target;

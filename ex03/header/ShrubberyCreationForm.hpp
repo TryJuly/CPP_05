@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 08:30:05 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 07:34:34 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:07:32 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,8 @@ class ShrubberyCreationForm: public AForm
 		virtual ~ShrubberyCreationForm();
 
 		ShrubberyCreationForm&	operator=(ShrubberyCreationForm const &copy);
-		// virtual void	beSigned(Bureaucrat const &bureaucrat);
 		virtual void	execute(Bureaucrat const &executor) const;
 
-		// virtual std::string const	&getName( void ) const;
-		// virtual bool				getSigned( void ) const;
-		// virtual int					getGradeToSignIt( void ) const;
-		// virtual int					getGradeToExecuteIt( void ) const;
 	private:
 		std::string	_target;
 

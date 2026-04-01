@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 10:02:51 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 14:12:47 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:07:56 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ AForm::AForm(AForm const &copy):
 _name(copy._name), _signed(copy._signed), _gradeToSignIt(copy._gradeToSignIt), _gradeToExecuteIt(copy._gradeToExecuteIt)
 { return ; }
 
-// AForm::AForm(AForm const &copy)
-// {
-// 	this->_signed = copy._signed;
-// 	return ;
-// }
-
 AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute):
 _name(name), _signed(false)
 {
@@ -46,10 +40,6 @@ _name(name), _signed(false)
 	this->_gradeToExecuteIt = gradeToExecute;
 	return ; 
 }
-
-// AForm::AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned):
-// _name(name), _signed(isSigned), _gradeToSignIt(gradeToSign), _gradeToExecuteIt(gradeToExecute)
-// { return ; }
 
 AForm&	AForm::operator=(AForm const &copy)
 {

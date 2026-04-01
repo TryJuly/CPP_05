@@ -6,16 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 08:41:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 14:23:50 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 10:12:03 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/RobotomyRequestForm.hpp"
-
-// std::string const	&RobotomyRequestForm::getName( void ) const { return (this->_name); }
-// bool				RobotomyRequestForm::getSigned( void ) const { return (this->_signed); }
-// int					RobotomyRequestForm::getGradeToSignIt( void ) const { return (this->_gradeToSignIt); }
-// int					RobotomyRequestForm::getGradeToExecuteIt( void ) const { return (this->_gradeToExecuteIt); }
 
 RobotomyRequestForm::RobotomyRequestForm():
 AForm("RobotomyRequestForm", 72, 45), _target("default")
@@ -38,14 +33,6 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const &c
 		this->_target = copy._target;
 	return (*this);
 }
-
-// void	RobotomyRequestForm::beSigned(Bureaucrat const &bureaucrat)
-// {
-// 	if (bureaucrat.getGrade() > this->getGradeToSignIt())
-// 		throw (Bureaucrat::GradeTooLowException());
-// 	this->_signed = true;
-// 	return ;
-// }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {

@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 09:56:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 15:20:39 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 09:51:42 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class AForm
 		AForm();
 		AForm(AForm const &copy);
 		AForm(const std::string& name, int gradeToSign, int gradeToExecute);
-		// AForm(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned);
 		virtual ~AForm();
 
 		AForm&	operator=(AForm const &copy);

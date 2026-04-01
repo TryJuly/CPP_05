@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 10:02:51 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/20 07:09:48 by strieste         ###   ########.fr       */
+/*   Updated: 2026/04/01 09:47:54 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,6 @@ _name(name), _signed(false)
 	return ; 
 }
 
-// Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, bool isSigned):
-// _name(name), _signed(isSigned), _gradeToSignIt(gradeToSign), _gradeToExecuteIt(gradeToExecute)
-// { return ; }
-
 Form&	Form::operator=(Form const &copy)
 {
 	if (this != &copy)
@@ -56,7 +52,6 @@ std::ostream	&operator<<(std::ostream &out, Form const &copy)
 	out << ", this form is signed: " << copy.getSigned() << std::endl;
 	return (out);
 }
-
 
 void	Form::beSigned(Bureaucrat const &bureaucrat)
 {
